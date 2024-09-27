@@ -1,0 +1,29 @@
+{
+  "name": "learningreact",
+  "version": "1.0.0",
+  "description": "Learning React JS",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unthinkable-Abhishek/learning.git"
+  },
+  "author": "Abhishek Pandey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unthinkable-Abhishek/learning/issues"
+  },
+  "homepage": "https://github.com/Unthinkable-Abhishek/learning#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserlist": [
+    "last 2 versions"
+  ]
+}
