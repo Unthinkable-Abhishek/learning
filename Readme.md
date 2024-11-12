@@ -125,3 +125,22 @@ Its a mix of html and js. In jsx attributes are written in camel case , use brac
     const data = api.getData();
     const el = <h1>{data}</h1>; 
     as this data can be a malicious thing
+
+
+*** Chapter - 4 ***
+
+1- Swiggy data - config driven UI, based on location everything changes as the products list, caraousel etc. 
+
+*** Chapter - 5 ***
+1-  export default <variable_name>
+    import <variable_name> <path>;
+
+2-  export const <variable_declaration>
+    import {<variable_name>} from <path>;
+
+3-  Reconciliation Algorithm (React Fiber comes in React 16 is a new way of finding diff)
+    7 res cards to 3 res cards
+    virtual dom is rep of actual dom, DOM is just tags
+    virtual dom is just react elements, 
+
+    Diff algo - finds out the difference between the updated virtual dom and previous dom then its update the DOM
