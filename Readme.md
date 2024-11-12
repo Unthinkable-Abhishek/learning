@@ -138,7 +138,6 @@ Its a mix of html and js. In jsx attributes are written in camel case , use brac
 3-  Reconciliation Algorithm (React Fiber comes in React 16 is a new way of finding diff)
     7 res cards to 3 res cards
     virtual dom is rep of actual dom, DOM is just tags
-    virtual dom is just react elements, 
-
+    virtual dom is just react elements
     Diff algo - finds out the difference between the updated virtual dom and previous dom then its update the DOM
 
