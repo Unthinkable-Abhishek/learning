@@ -123,9 +123,6 @@ Its a mix of html and js. In jsx attributes are written in camel case , use brac
 
 9- jsx takes care of the cross side attacks, as it sanitizes the code before running and it doesn't blindly runs it. 
     const data = api.getData();
-    const el = <h1>{data}</h1>; 
-    as this data can be a malicious thing
-
 
 *** Chapter - 4 ***
 
@@ -144,3 +141,4 @@ Its a mix of html and js. In jsx attributes are written in camel case , use brac
     virtual dom is just react elements, 
 
     Diff algo - finds out the difference between the updated virtual dom and previous dom then its update the DOM
+
