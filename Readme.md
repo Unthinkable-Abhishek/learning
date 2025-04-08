@@ -141,3 +141,4 @@ Its a mix of html and js. In jsx attributes are written in camel case , use brac
     virtual dom is just react elements
     Diff algo - finds out the difference between the updated virtual dom and previous dom then its update the DOM
 
+4- Some Changes for repo
