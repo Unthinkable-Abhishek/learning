@@ -2,12 +2,14 @@ Learning React JS
 
 *** Chapter - 1  ***
 
-1- createElement makes an object which has following things
+1- createElement makes an JS object which has following things
     1- type - h1
     2- props
         1- attributes- id - objects
         2- children
-        for multiple children pass it as array 
+        for multiple children pass it as array
+
+    React.createElement("h1", {id: 'hello'}, "Hello World");
 
 2- createRoot is responsible to assign a root inside react
 
@@ -20,7 +22,7 @@ Learning React JS
     framework comes with all lots of things
     framework may not be applied to the existing application, but we can use react in small section of a page
 
-5- order of the script matters in index.html , react cdn link and then reactDOM cdn link
+5- order of the script matters in index.html, react cdn link and then reactDOM cdn link
    as reactDOM wants react to render on the page first
 
 
@@ -35,12 +37,12 @@ it also ensure that project uses the correct version of dependencies (packages),
 
 4- bundler - it bundles our app which can be shipped to the production, we will be using parcel, 
     npm i -D parcel : -D dev_dependencies generally requires in development phase , normal can be for production 
-    chunking, bundling, clean, minify cache - all this is done by bundler
+    chunking, bundling, clean, minify cache - 0all this is done by bundler
 
     ^ -> caret - upgrade the minor version 1.2.3 < 2.0.0
-    ~ -> tilde - upgrade the patch version 1.2.3 < 1.3.0
+    ~ -> tilde - upgrade the patch version 1.2.3 < 1.3.
 
-5- node_modules - dependencies will have its own dependencies i.e transitive (direct object) dependencies  , parcel need more package or dependencies , it need babel then babel will get installed, all the code and peer dependencies code are in node_modules
+5- node_modules - dependencies will have its own dependencies i.e transitive (direct object) dependencies, parcel need more package or dependencies, it need babel then babel will get installed, all the code and peer dependencies code are in node_modules
 
 6- npm vs npx - npm calls just npm command, npx executes a package
 
@@ -48,12 +50,12 @@ it also ensure that project uses the correct version of dependencies (packages),
 
 8- import React from 'react' - importing React in file from 'react' which is in node_modules now as we have installed it in our project
 
-9- Browser scripts can't have imports and exports - write type="modules" in script tag while referring to script of index.html file, as it will not be a normal browserscript it will be a module
+9- Browser scripts can't have imports and exports - write type="modules" in script tag while referring to script of index.html file, as it will not be a normal browserscript it will be a module.
 
 10- Parcel - Dev Build, Local Server, HMR (Hot module replacement), File Watching Algo (C++), 
              Caching Faster build, Image Optimization, Minification, Bundling, Compress, Consistent Hashing, Code Splitting, Differential Bundling, Diagnostic, Error Handling, Host your app on https, Tree Shaking Algo
 
-             Parcel uses file watching algo (C++), Keeps track and it gets build once again, faster     build because of cache. parcel-cache have files, caching things so build get developed fast
+             Parcel uses file watching algo (C++), Keeps track and it gets build once again, faster build because of cache. parcel-cache have files, caching things so build get developed fast
 
              Support older browsers by differential bundling for eg we have type="module" can generate no module for older browser
 
