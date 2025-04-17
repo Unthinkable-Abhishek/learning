@@ -7,10 +7,10 @@
 //   "Hello World"
 // ); //Object, this is how you create using react
 
-// // React Element is just some jsx
+// React Element is just some jsx
 // const jsxHeading = <h1 id="heading">Hello World</h1>; // babel transpile it into react.createElement
 
-// //React functional Component
+//React functional Component
 // const Title = () => {
 //     return <h1>This is title</h1>;
 // }
@@ -21,7 +21,7 @@
 //     <h1>Normal JS Variable</h1>
 // )
 
-// //This is component composition - composing a comp inside another
+//This is component composition - composing a comp inside another
 // const MyHeading = () => {
 //     return (
 //         <div id="container">
@@ -39,13 +39,13 @@
 //     )
 // }
 
-// // const MyHeading = () => {
-// //     <h1 id="heading">Hello</h1>;
-// // }
+// const MyHeading = () => {
+//     <h1 id="heading">Hello</h1>;
+// }
 
-// // const MyHeading = () => (
-// //     <h1>Hello</h1>
-// // );
+// const MyHeading = () => (
+//     <h1>Hello</h1>
+// );
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 
