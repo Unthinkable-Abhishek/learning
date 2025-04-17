@@ -68,6 +68,8 @@ it also ensure that project uses the correct version of dependencies (packages),
 
 12- BrowserList- Support old broweser list
 
+13- This is what npx create-react-app does
+
 
 ***  Chapter  3  ***
 
@@ -79,7 +81,8 @@ Its a mix of html and js. In jsx attributes are written in camel case , use brac
 
 3- React.createElement makes an object and when it get rendered onto DOM it convert this object into html
 
-4- Browser doesn't understand jsx but parcel transpiled it into the code which is understandable by the browser. Parcel doesn't do a lot of things by itself, it gives this responsbility to the babel (parcel installs it). Its babel job (its a package), it converted the code which is understand by react
+4- Browser doesn't understand jsx but parcel transpiled it into the code which is understandable by the browser. Parcel doesn't do a lot of things by itself, it gives this responsbility to the babel (parcel installs it). Its babel job (its a package), it converted the code which is understand by react.
+JS Engine understands ES6, which is a valid pure js understandable by browsers JS engine. And this transpilation is done by Parcel behind the scenes. And actually babels does this.
 
 5- jsx code is converted to react.createElement (makes an js element). React Element is just a jsx.
 
