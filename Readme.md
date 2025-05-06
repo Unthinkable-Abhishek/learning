@@ -76,10 +76,16 @@ it also ensure that project uses the correct version of dependencies (packages),
 1- scripts - in package.json , write short form of command and for that write the command and now we can use like npm run ***, eg for start - npm run start or npm start
 
 2- JSX - js syntax makes easy to create react element, we merge HTML and JS.
-const heading = <h1>Hello World</h1> -> this is jsx, jsx is html like syntax, more closer to XML
+const heading = <h1>Hello World</h1> -> this is jsx, jsx is html like syntax, more closer to XML, JSX is different
 Its a mix of html and js. In jsx attributes are written in camel case , use brackets for multiple line.
 
+JSX is not JS, JS Engine understands Ecmascript, 
+parcel does this job of transpiling jsx to js, actually babel does this job which is js compiler, it take jsx and converts to js which js engine understands
+
+JSX to React.createElement (JS Objects) and it gets rendered as html.
+
 3- React.createElement makes an object and when it get rendered onto DOM it convert this object into html
+React Element => Object => HTML
 
 4- Browser doesn't understand jsx but parcel transpiled it into the code which is understandable by the browser. Parcel doesn't do a lot of things by itself, it gives this responsbility to the babel (parcel installs it). Its babel job (its a package), it converted the code which is understand by react.
 JS Engine understands ES6, which is a valid pure js understandable by browsers JS engine. And this transpilation is done by Parcel behind the scenes. And actually babels does this.
@@ -120,7 +126,7 @@ JS Engine understands ES6, which is a valid pure js understandable by browsers J
     
     We can also use simple function, but in that we have to write return 
     <Title></Title> can we written like this too but they both have different use
-    {Title()} can be called like this too as this is js at the end of the day.
+    {Title()} function, can be called like this too as this is js at the end of the day.
 
 8- We can use functional comp in react element and vice varsa.
     root.render(title); -> title is react element 
@@ -132,18 +138,93 @@ JS Engine understands ES6, which is a valid pure js understandable by browsers J
 *** Chapter - 4 ***
 
 1- Swiggy data - config driven UI, based on location everything changes as the products list, caraousel etc. 
+2- Using Map instead of for loop, provide unique id to all the item.
+3- Key is important because if we don't provide then react will render all the list item.
 
 *** Chapter - 5 ***
-1-  export default <variable_name>
+1-  export default <variable_name>, This is default export
     import <variable_name> <path>;
 
-2-  export const <variable_declaration>
+    We cannot have multiple default
+
+2-  export const <variable_declaration> , This is named export
     import {<variable_name>} from <path>;
 
-3-  Reconciliation Algorithm (React Fiber comes in React 16 is a new way of finding diff)
+3-  useState hook
+    gives us current state and method to update the state
+    normal JS utility function's, written inside react by FB developers 
+    if i use a variable without useState hook and if i update it then the UI will not update
+    whenever a state variable gets update, react re-render the component
+    keeps the data layer in sync with UI layer
+
+    Eg - Button with name login and when clicked on it will change to logut
+    a- Using a js variable, we will change the name to logout on a click of a button, but the UI will not change the name, as react doesn't monitors the change of an state.
+
+    b- Using useState hook, react monitors change of the variable binds with the state, and when we change it will re-render the component, and then will compare the changes and will only change the name of the btn.
+
+
+4-  Reconciliation Algorithm (React Fiber comes in React 16 is a new way of finding diff)
     7 res cards to 3 res cards
     virtual dom is rep of actual dom, DOM is just tags
     virtual dom is just react elements
     Diff algo - finds out the difference between the updated virtual dom and previous dom then its update the DOM
 
-4- Some Changes for repo
+    This whole algo in React Fiber (React 16), whenever something changes on UI this is known as Reconciliation.
+    RF is new way of finding diff and updating DOM. 
+    Finds out the difference between 2 VD i.e 2 objects.
+
+    Eg - 7 res cards initially and when we click btn we get 3 res cards, now react compares these 2 VD i.e 2 objects and then updates the real dom.
+
+    React can effeciently finds out the differnce between VD's and updates the UI, this is the core algo of React.
+
+    React creates a virtual dom , VD is actually react element, so the header component is a VD, its an object basically.
+    VD is nothing but a JS object.
+
+    Diff algo - finds out the diff between 2 VD,  previous VD and updated VD. 
+
+    prev VD                 New VD
+    7 res cards             3 res cards
+
+    Read - Incremental rendering, 
+
+
+*** Chapter - 6 ***
+1- Monolith Architecture and Microservice Architecture
+
+Monolith - Earlier we used to work with this, code which has api , UI code inside, auth code, DB connectivity code, sending sms code in the same project.
+All code in same project. Even for a small change we have to build the whole project.
+Work on same repo.
+
+Microservice - We have different service for different jobs.
+Backend Service, UI Service, Auth Service, DB Service, SMS Service, Gmail Service.
+For each and every service we had a different projects.
+This is separation of concerns and single responsibility principle, and each and every service has its own jobs.
+Team work on different repo with own deployment cycle.
+We can use multiple tech stack, multiple language, we can decide which tech stack is suitable for that and can use the same.
+Each service run on there specific ports i.e /api /sms 
+These service interacts by making a call to different port.
+
+2- Fetching Data from api
+
+a-  As soon as page loads we can make api call
+    Loads -> Api() -> Render
+    If api takes 500ms then app will wait for that then will render the page.
+    We can use a state for rendering a loader rather that our component.
+b - Recommend approach 
+    Loads -> Render -> Api -> Render(using data from api)
+    Better UX , yes we rerender but in react rendering is fast so no need to bother about.
+
+3-  useEffect hook
+    2 arguments - callback function and dependency array,
+    this function is called after the component renders,
+    when it sees the useEffect it registers the callback function to call it after render.
+
+    using fetch we will call an api, given to us by browsers, and JS engine has this.
+    Our browser block us to call an api from one origin to another origin and gives an error of CORS.
+
+    integrating live api like swiggy, then rendering the component with new data.
+
+    Implement shimmer ui effect on the basis of the length of restaurant cards, 
+
+4 - useState
+    whenever state gets update, react triggers a reconcialition cycle i.e re-rendering the component
