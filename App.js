@@ -54,32 +54,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
-import RestaurantCard from "./src/components/RestaurantCard";
-import { resList } from "./src/utils/mockData";
+import Body from "./src/components/Body";
 
-const AppLoyout = () => {
-  const [filterData, setFilterData] = React.useState(resList);
-
-  function filterRestaurantList() {
-    let filteredList = filterData.filter((item)=> item.rating >= 4);
-    setFilterData(filteredList);
-  }
+const AppLayout = () => {
 
   return (
     <div className="app">
       <Header />
-      <button className="filter-btn" onClick={filterRestaurantList}>Top Rated Restaurant's</button>
-      <div className="res-container">
-        {filterData.map((restaurant) => {
-          return (
-            <RestaurantCard props={restaurant}/>
-          )})
-        }
-      </div>
+      <Body />
     </div>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLoyout />); //replaces whatever in root and put this into that
+root.render(<AppLayout />); //replaces whatever in root and put this into that

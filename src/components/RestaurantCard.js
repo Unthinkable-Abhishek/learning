@@ -1,17 +1,23 @@
+import { IMG_URL } from "../utils/constant";
 
 const RestaurantCard = ({ props }) => {
-  const { resName, cuisine, rating, eta } = props;
+  const {info = {}} = props || {};
+  const {name = '', cuisines = [], avgRating = 0, sla = {}, cloudinaryImageId = '', id='' } = info || {};
+
+  const imgLink = IMG_URL + `${cloudinaryImageId}`;
+
   return (
-    <div className="res-card">
+    <div className="res-card" key={id}>
       <img
         className="res-logo"
         alt="res-logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/5/26/78517964-20dc-4e37-92ce-8990deb14ab6_898041.jpg"
+        src={imgLink}
+        style={{ width: '100%', objectFit: 'contain', height: '300px', borderRadius: '20px' }}
       />
-      <h3>{resName}</h3>
-      <h4>{cuisine}</h4>
-      <h4>{rating} Stars</h4>
-      <h4>{eta} minutes</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(', ')}</h4>
+      <h4>{avgRating} Stars</h4>
+      <h4>{sla?.deliveryTime} minutes</h4>
     </div>
   );
 };
