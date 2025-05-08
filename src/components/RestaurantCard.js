@@ -14,8 +14,8 @@ const RestaurantCard = ({ props }) => {
         src={imgLink}
         style={{ width: '100%', objectFit: 'contain', height: '300px', borderRadius: '20px' }}
       />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(', ')}</h4>
+      <h3 style={{overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',}}>{name}</h3>
+      <p style={{overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',}}>{cuisines.join(', ')}</p>
       <h4>{avgRating} Stars</h4>
       <h4>{sla?.deliveryTime} minutes</h4>
     </div>

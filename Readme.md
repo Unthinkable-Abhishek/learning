@@ -228,3 +228,61 @@ b - Recommend approach
 
 4 - useState
     whenever state gets update, react triggers a reconcialition cycle i.e re-rendering the component
+
+
+*** Chapter - 7 ***
+1-  react-router-dom
+    Its an Library which we use for managing the route.
+    We are following the data based approach for defining the route, we also have declarative and framework method, which we can use for the same purpose.
+
+    a- createBrowserRouter - helps in creating the router, we can call this function and can give an array of json which will have a path, element. path will be the route which we will call and element will be rendered when we will call that route.
+
+    Helps in creating routing configuration for our app router
+    Takes a list of configuration, in which each obj defines a path , and what will happen on that path.
+
+    So now while rendering, I will not render a component we will render the routes
+    const AppRouter = createBrowserRouter([
+        {
+            path : "/",
+            element: <AppLayout />,
+            errorElement: <ErrorComponent />
+        }, 
+        {
+            path: "/about",
+            element: <About />
+        },
+        {
+            path: "/contact-us",
+            element: <ContactUs />
+        }
+    ]); 
+    Also we can give childrens to the path: "/" rather than defining the separate paths for About and ContactUs Component.
+
+    b- RouterProvider- this will used to render the routes element. so we will render this by passing the router obj which we get from createBrowserRouter, so now all the routes will be render on to the screen.
+    Eg- <RouterProvider router={AppRouter} />
+
+    Creating Children for an path
+    1- use children properties to define a list of children for the parent path.
+
+    The children will take the same configuration.
+
+    Suppose I want the header to be rendered for every children of path "/", then I can define the childrens including the path "/", "/about", "/contact-us" and I can have Outlet component in the element of the parent of these childrens.
+
+    We have to provide <Outlet /> component in the parent component which will be replaced by the children element 
+
+2-  Types of Routing in Web App 
+    2 Types 
+    Client Side Routing and Server Side Routing
+
+    Note - Rendering is different than routing
+    a-  Client Side Routing
+        When we create a react app which is actually a single source application, which has all the component but when we go to the route it renders that component.
+        This is Client Side Routing.
+
+    b-  Server Side Routing
+        When we make a call to "/about", it makes a call to server from where we get html page then it is rendered on to the screen and the whole page is rendered again.
+        This is Server Side Routing.
+
+3-  Dynamic Routing
+
+    Dynamice routing means when we want to route the user to an page which is common but depends on an id, or same value and for eg "/restaurants/:resId"

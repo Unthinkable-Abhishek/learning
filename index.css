@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -75,4 +79,19 @@ li {
     display: flex;
     align-items: center;
     margin-left: 40px;
+}
+
+.res-menu {
+    margin: 0px 80px;
+    margin-top: 20px;
+}
+
+.res-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.res-details p {
+    margin: 0;
 }
