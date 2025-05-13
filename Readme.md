@@ -312,3 +312,20 @@ b - Recommend approach
 
     React Lifecycle Methods studied with also compared with the new Functional Component
 
+
+*** Chapter - 9 ***
+1 - Optimize Our App
+
+    Below are the techniques which we can use to optimize our app.
+    Divide Component into small small components , i.e Single Responsibility principle. Code become modular, readable, maintainneable, testable.
+
+    Custom Hooks - Hooks are just utility functions created by us. We can take responsibility from some comp and can make our own custom hooks. 
+
+    We can make a custom hook for checking the online/offline status of the user.
+
+    Optimization Techniques
+    1 - Code Splitting, Dynamic Bundling, Chunking
+    Make App in small chunks i.e split your code 
+
+    2 - Lazy loading - using lazy and suspense api provided by react. or dynamic loading/import
+    import an component using lazy and then wrap it in Suspense, now the separate bundle will be created for that and will only be called when we will react on to that page.

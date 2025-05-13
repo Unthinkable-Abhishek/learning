@@ -51,15 +51,16 @@
 
 // root.render(MyHeading()); //replaces whatever in root and put this into that
 
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import About from "./src/components/About";
 import ContactUs from "./src/components/ContactUs";
 import ErrorComponent from "./src/components/ErrorComponent";
 import RestaurantPage from "./src/components/RestaurantPage";
+
+const About = lazy(() => import ('./src/components/About'));
 
 const AppLayout = () => {
   return (
@@ -76,7 +77,6 @@ const AppRouter = createBrowserRouter([
     element: <AppLayout />,
     errorElement: <ErrorComponent />,
     children: [
-
       {
         index:true,
         path: "/",
@@ -84,7 +84,7 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />
+        element: <Suspense fallback={<h1>Loading ...</h1>}><About /></Suspense>,
       },
       {
         path: "/contact-us",
