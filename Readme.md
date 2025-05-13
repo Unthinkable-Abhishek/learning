@@ -286,3 +286,29 @@ b - Recommend approach
 3-  Dynamic Routing
 
     Dynamice routing means when we want to route the user to an page which is common but depends on an id, or same value and for eg "/restaurants/:resId"
+
+
+*** Chapter - 8 ***
+
+1 - Class based Components
+    Its a class that extends React.Component whereas functional comp returns jsx
+
+    render() - returns a piece of jsx 
+    constructor - define state, bind methods, 
+
+2 - Lifecycle Methods
+
+    When the class instance is created, constructor method is called.
+    After that render is called
+
+    RENDER PHASE - 
+    parent constructor then parent render
+    child constructor then child render
+    these render phase is batched because DOM manipulation is expensive and react optimize by doing this. happens in single batch
+
+    COMMIT PHASE - 
+    child componentDidMount is called 
+    parent componentDidMount is called
+
+    React Lifecycle Methods studied with also compared with the new Functional Component
+
